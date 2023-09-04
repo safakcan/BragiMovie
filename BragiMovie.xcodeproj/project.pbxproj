@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91926222481EE8852553FB69 /* Pods_BragiMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CD41C188AC23BDBBB2B2E6 /* Pods_BragiMovie.framework */; };
 		92FE922F2AA60B1F00DBC185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */; };
 		92FE92312AA60B1F00DBC185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */; };
 		92FE92332AA60B1F00DBC185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92322AA60B1F00DBC185 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13CD41C188AC23BDBBB2B2E6 /* Pods_BragiMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BragiMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FE922B2AA60B1F00DBC185 /* BragiMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BragiMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		92FE92372AA60B2000DBC185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92FE923A2AA60B2000DBC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92FE923C2AA60B2000DBC185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1F13721C71630EDC7D83097 /* Pods-BragiMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BragiMovie.debug.xcconfig"; path = "Target Support Files/Pods-BragiMovie/Pods-BragiMovie.debug.xcconfig"; sourceTree = "<group>"; };
+		EF45701218CE850FE98A4B15 /* Pods-BragiMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BragiMovie.release.xcconfig"; path = "Target Support Files/Pods-BragiMovie/Pods-BragiMovie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91926222481EE8852553FB69 /* Pods_BragiMovie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2526523DCF61D401D559D345 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13CD41C188AC23BDBBB2B2E6 /* Pods_BragiMovie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AD7FF3E7CE9DB26CD29B2BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1F13721C71630EDC7D83097 /* Pods-BragiMovie.debug.xcconfig */,
+				EF45701218CE850FE98A4B15 /* Pods-BragiMovie.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92FE92222AA60B1E00DBC185 = {
 			isa = PBXGroup;
 			children = (
 				92FE922D2AA60B1F00DBC185 /* BragiMovie */,
 				92FE922C2AA60B1F00DBC185 /* Products */,
+				7AD7FF3E7CE9DB26CD29B2BA /* Pods */,
+				2526523DCF61D401D559D345 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,39 @@
 		92FE922D2AA60B1F00DBC185 /* BragiMovie */ = {
 			isa = PBXGroup;
 			children = (
-				92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */,
-				92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */,
-				92FE92322AA60B1F00DBC185 /* ViewController.swift */,
-				92FE92342AA60B1F00DBC185 /* Main.storyboard */,
-				92FE92372AA60B2000DBC185 /* Assets.xcassets */,
-				92FE92392AA60B2000DBC185 /* LaunchScreen.storyboard */,
+				92FE92442AA60FDC00DBC185 /* Other */,
+				92FE92452AA6171A00DBC185 /* View */,
+				92FE92432AA60FC200DBC185 /* Resources */,
 				92FE923C2AA60B2000DBC185 /* Info.plist */,
 			);
 			path = BragiMovie;
+			sourceTree = "<group>";
+		};
+		92FE92432AA60FC200DBC185 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92FE92372AA60B2000DBC185 /* Assets.xcassets */,
+				92FE92392AA60B2000DBC185 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92FE92442AA60FDC00DBC185 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */,
+				92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		92FE92452AA6171A00DBC185 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92FE92322AA60B1F00DBC185 /* ViewController.swift */,
+				92FE92342AA60B1F00DBC185 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +122,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92FE923F2AA60B2000DBC185 /* Build configuration list for PBXNativeTarget "BragiMovie" */;
 			buildPhases = (
+				6CCDCD2F4132AA4D7DD7B2D8 /* [CP] Check Pods Manifest.lock */,
 				92FE92272AA60B1E00DBC185 /* Sources */,
 				92FE92282AA60B1E00DBC185 /* Frameworks */,
 				92FE92292AA60B1E00DBC185 /* Resources */,
@@ -132,6 +181,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CCDCD2F4132AA4D7DD7B2D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BragiMovie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		92FE92272AA60B1E00DBC185 /* Sources */ = {
@@ -282,6 +356,7 @@
 		};
 		92FE92402AA60B2000DBC185 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1F13721C71630EDC7D83097 /* Pods-BragiMovie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,6 +370,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +386,7 @@
 		};
 		92FE92412AA60B2000DBC185 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF45701218CE850FE98A4B15 /* Pods-BragiMovie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -323,6 +400,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
