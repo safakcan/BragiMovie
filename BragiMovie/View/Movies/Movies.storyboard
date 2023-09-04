@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="6rD-0Y-Rev"/>
                 </viewController>
@@ -25,11 +25,11 @@
             </objects>
             <point key="canvasLocation" x="1841.9847328244275" y="24.647887323943664"/>
         </scene>
-        <!--Item-->
+        <!--Movie-->
         <scene sceneID="0Dt-ZQ-x9i">
             <objects>
                 <navigationController storyboardIdentifier="MoviesPageNav" automaticallyAdjustsScrollViewInsets="NO" id="5Hg-mz-GsR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="5Tf-4F-sMg"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="film.fill" catalog="system" selectedImage="film.fill" id="5Tf-4F-sMg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhE-gb-u6R">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -50,6 +50,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3U2-hk-HxC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gW2-96-12f">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -63,8 +64,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="film.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -25,11 +25,11 @@
             </objects>
             <point key="canvasLocation" x="1858.7786259541983" y="18.30985915492958"/>
         </scene>
-        <!--Item-->
+        <!--TV-->
         <scene sceneID="GZX-C9-NOg">
             <objects>
                 <navigationController storyboardIdentifier="ShowsPageNav" automaticallyAdjustsScrollViewInsets="NO" id="PEx-Iu-5px" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nbq-19-rJU"/>
+                    <tabBarItem key="tabBarItem" title="TV" image="play.tv" catalog="system" selectedImage="play.tv" id="nbq-19-rJU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cle-LM-dnv">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -50,6 +50,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="mO8-Tw-cru" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WaM-5D-C8e">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -63,6 +64,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.tv" catalog="system" width="128" height="95"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
