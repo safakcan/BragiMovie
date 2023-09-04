@@ -8,24 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		91926222481EE8852553FB69 /* Pods_BragiMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CD41C188AC23BDBBB2B2E6 /* Pods_BragiMovie.framework */; };
+		9291BE472AA62A3A0041BA6E /* ShowsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291BE462AA62A3A0041BA6E /* ShowsPageViewModel.swift */; };
+		9291BE492AA62A450041BA6E /* MoviePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9291BE482AA62A450041BA6E /* MoviePageViewModel.swift */; };
 		92FE922F2AA60B1F00DBC185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */; };
 		92FE92312AA60B1F00DBC185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */; };
 		92FE92332AA60B1F00DBC185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92322AA60B1F00DBC185 /* ViewController.swift */; };
-		92FE92362AA60B1F00DBC185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE92342AA60B1F00DBC185 /* Main.storyboard */; };
+		92FE92362AA60B1F00DBC185 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE92342AA60B1F00DBC185 /* MainTabBar.storyboard */; };
 		92FE92382AA60B2000DBC185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92FE92372AA60B2000DBC185 /* Assets.xcassets */; };
 		92FE923B2AA60B2000DBC185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE92392AA60B2000DBC185 /* LaunchScreen.storyboard */; };
+		92FE92472AA6192C00DBC185 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92462AA6192C00DBC185 /* MainTabBarController.swift */; };
+		92FE924A2AA6235800DBC185 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE92492AA6235800DBC185 /* Movies.storyboard */; };
+		92FE924C2AA623BC00DBC185 /* MoviesPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE924B2AA623BC00DBC185 /* MoviesPageVC.swift */; };
+		92FE924F2AA624D700DBC185 /* Shows.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92FE924E2AA624D700DBC185 /* Shows.storyboard */; };
+		92FE92512AA6250D00DBC185 /* ShowsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE92502AA6250D00DBC185 /* ShowsPageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13CD41C188AC23BDBBB2B2E6 /* Pods_BragiMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BragiMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9291BE462AA62A3A0041BA6E /* ShowsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsPageViewModel.swift; sourceTree = "<group>"; };
+		9291BE482AA62A450041BA6E /* MoviePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePageViewModel.swift; sourceTree = "<group>"; };
 		92FE922B2AA60B1F00DBC185 /* BragiMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BragiMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FE922E2AA60B1F00DBC185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92FE92302AA60B1F00DBC185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		92FE92322AA60B1F00DBC185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		92FE92352AA60B1F00DBC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92FE92352AA60B1F00DBC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
 		92FE92372AA60B2000DBC185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92FE923A2AA60B2000DBC185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92FE923C2AA60B2000DBC185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92FE92462AA6192C00DBC185 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		92FE92492AA6235800DBC185 /* Movies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
+		92FE924B2AA623BC00DBC185 /* MoviesPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPageVC.swift; sourceTree = "<group>"; };
+		92FE924E2AA624D700DBC185 /* Shows.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shows.storyboard; sourceTree = "<group>"; };
+		92FE92502AA6250D00DBC185 /* ShowsPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsPageVC.swift; sourceTree = "<group>"; };
 		B1F13721C71630EDC7D83097 /* Pods-BragiMovie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BragiMovie.debug.xcconfig"; path = "Target Support Files/Pods-BragiMovie/Pods-BragiMovie.debug.xcconfig"; sourceTree = "<group>"; };
 		EF45701218CE850FE98A4B15 /* Pods-BragiMovie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BragiMovie.release.xcconfig"; path = "Target Support Files/Pods-BragiMovie/Pods-BragiMovie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,10 +123,33 @@
 		92FE92452AA6171A00DBC185 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92FE924D2AA624BE00DBC185 /* Shows */,
+				92FE92482AA6232B00DBC185 /* Movies */,
 				92FE92322AA60B1F00DBC185 /* ViewController.swift */,
-				92FE92342AA60B1F00DBC185 /* Main.storyboard */,
+				92FE92342AA60B1F00DBC185 /* MainTabBar.storyboard */,
+				92FE92462AA6192C00DBC185 /* MainTabBarController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92FE92482AA6232B00DBC185 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				92FE92492AA6235800DBC185 /* Movies.storyboard */,
+				92FE924B2AA623BC00DBC185 /* MoviesPageVC.swift */,
+				9291BE482AA62A450041BA6E /* MoviePageViewModel.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		92FE924D2AA624BE00DBC185 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				92FE924E2AA624D700DBC185 /* Shows.storyboard */,
+				92FE92502AA6250D00DBC185 /* ShowsPageVC.swift */,
+				9291BE462AA62A3A0041BA6E /* ShowsPageViewModel.swift */,
+			);
+			path = Shows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,7 +213,9 @@
 			files = (
 				92FE923B2AA60B2000DBC185 /* LaunchScreen.storyboard in Resources */,
 				92FE92382AA60B2000DBC185 /* Assets.xcassets in Resources */,
-				92FE92362AA60B1F00DBC185 /* Main.storyboard in Resources */,
+				92FE924F2AA624D700DBC185 /* Shows.storyboard in Resources */,
+				92FE92362AA60B1F00DBC185 /* MainTabBar.storyboard in Resources */,
+				92FE924A2AA6235800DBC185 /* Movies.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9291BE472AA62A3A0041BA6E /* ShowsPageViewModel.swift in Sources */,
 				92FE92332AA60B1F00DBC185 /* ViewController.swift in Sources */,
 				92FE922F2AA60B1F00DBC185 /* AppDelegate.swift in Sources */,
+				92FE924C2AA623BC00DBC185 /* MoviesPageVC.swift in Sources */,
+				9291BE492AA62A450041BA6E /* MoviePageViewModel.swift in Sources */,
+				92FE92472AA6192C00DBC185 /* MainTabBarController.swift in Sources */,
+				92FE92512AA6250D00DBC185 /* ShowsPageVC.swift in Sources */,
 				92FE92312AA60B1F00DBC185 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,12 +265,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		92FE92342AA60B1F00DBC185 /* Main.storyboard */ = {
+		92FE92342AA60B1F00DBC185 /* MainTabBar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				92FE92352AA60B1F00DBC185 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainTabBar.storyboard;
 			sourceTree = "<group>";
 		};
 		92FE92392AA60B2000DBC185 /* LaunchScreen.storyboard */ = {
@@ -366,8 +410,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BragiMovie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
@@ -396,8 +440,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BragiMovie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
