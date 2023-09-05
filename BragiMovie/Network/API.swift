@@ -8,53 +8,92 @@
 import Foundation
 import RxSwift
 
+
+enum ContentType {
+    case movie
+    case tvShow
+
+    var genreEndpoint: String {
+        switch self {
+        case .movie: return "genre/movie/list"
+        case .tvShow: return "genre/tv/list"
+        }
+    }
+}
+
 protocol APIService {
-    func fetchGenres() -> Observable<[Genre]>
+    func fetchGenres(for contentType: ContentType) -> Observable<[Genre]>
     func fetchMovies(for genre: Genre, page: Int) -> Observable<[Movie]>
+    func fetchTVShows(for genre: Genre, page: Int) -> Observable<[TVShow]>
 }
 
 class TMDBAPIService: APIService {
     private let apiKey = "4f9da36791283d432b3658ba4274469e"
     private let baseURL = URL(string: "https://api.themoviedb.org/3/")!
 
-    func fetchGenres() -> Observable<[Genre]> {
-        guard let url = URL(string: "\(baseURL)genre/movie/list?api_key=\(apiKey)") else {
-            return Observable.error(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
-        }
+    // MARK: - Fetch Methods
 
-        return Network.shared.request(url: url)
-            .flatMap { data -> Observable<[Genre]> in
-                do {
-                    let response = try JSONDecoder().decode(GenreResponse.self, from: data)
-                    return Observable.just(response.genres)
-                } catch {
-                    return Observable.error(error)
-                }
-            }
-            .catch { error in
-                print("Networking error: \(error)")
-                return Observable.empty()
-            }
+    func fetchGenres(for contentType: ContentType) -> Observable<[Genre]> {
+        return fetch(url: makeURL(endpoint: contentType.genreEndpoint))
+            .decode(type: GenreResponse.self)
+            .map { $0.genres }
     }
 
     func fetchMovies(for genre: Genre, page: Int = 1) -> Observable<[Movie]> {
-        guard let url = URL(string: "\(baseURL)discover/movie?api_key=\(apiKey)&with_genres=\(genre.id)&page=\(page)") else {
-            return Observable.error(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"]))
+        return fetch(url: makeURL(endpoint: "discover/movie", with: genre, page: page))
+            .decode(type: MovieResponse.self)
+            .map { $0.results }
+    }
+
+    func fetchTVShows(for genre: Genre, page: Int = 1) -> Observable<[TVShow]> {
+        return fetch(url: makeURL(endpoint: "discover/tv", with: genre, page: page))
+            .decode(type: TVShowsResponse.self)
+            .map { $0.results }
+    }
+
+    // MARK: - Helper Methods
+
+    private func fetch(url: URL?) -> Observable<Data> {
+        guard let url = url else {
+            return .error(NetworkError.invalidURL)
         }
 
         return Network.shared.request(url: url)
-            .flatMap { data -> Observable<[Movie]> in
-                do {
-                    let response = try JSONDecoder().decode(MovieResponse.self, from: data)
-                    return Observable.just(response.results)
-                } catch {
-                    return Observable.error(error)
-                }
-            }
             .catch { error in
                 print("Networking error: \(error)")
-                return Observable.empty()
+                return .empty()
             }
     }
 
+    private func makeURL(endpoint: String, with genre: Genre? = nil, page: Int = 1) -> URL? {
+        if let genre = genre {
+            return URL(string: "\(baseURL)\(endpoint)?api_key=\(apiKey)&with_genres=\(genre.id)&page=\(page)")
+        } else {
+            return URL(string: "\(baseURL)\(endpoint)?api_key=\(apiKey)")
+        }
+    }
 }
+
+// MARK: - Observable Extensions
+
+extension Observable where Element == Data {
+    func decode<T: Decodable>(type: T.Type) -> Observable<T> {
+        return self.flatMap { data -> Observable<T> in
+            do {
+                let response = try JSONDecoder().decode(T.self, from: data)
+                return .just(response)
+            } catch {
+                return .error(NetworkError.decodingError)
+            }
+        }
+    }
+}
+
+// MARK: - Network Errors
+
+enum NetworkError: Error {
+    case invalidURL
+    case decodingError
+}
+
+

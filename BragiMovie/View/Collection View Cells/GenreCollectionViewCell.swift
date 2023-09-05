@@ -9,7 +9,9 @@ import UIKit
 
 class GenreCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var genreLbl: UILabel?
-    
+
+    static let nib = UINib(nibName: "GenreCollectionViewCell", bundle: nil)
+    static let identifier = "GenreCollectionViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
