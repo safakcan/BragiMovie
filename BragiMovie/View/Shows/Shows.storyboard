@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BNr-GO-jip">
-                                <rect key="frame" x="0.0" y="103" width="393" height="80"/>
+                                <rect key="frame" x="5" y="103" width="383" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="yA6-L5-AL6"/>
@@ -65,12 +65,12 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BNr-GO-jip" secondAttribute="trailing" id="3iR-Vs-5Ja"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BNr-GO-jip" secondAttribute="trailing" constant="5" id="3iR-Vs-5Ja"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="XmM-p1-pLg" secondAttribute="bottom" id="7Gd-3F-T2J"/>
                             <constraint firstItem="XmM-p1-pLg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="KA3-4d-AGb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XmM-p1-pLg" secondAttribute="trailing" id="OnP-6V-BSU"/>
                             <constraint firstItem="BNr-GO-jip" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Tg5-oW-Ils"/>
-                            <constraint firstItem="BNr-GO-jip" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="nSO-pF-BVN"/>
+                            <constraint firstItem="BNr-GO-jip" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="nSO-pF-BVN"/>
                             <constraint firstItem="XmM-p1-pLg" firstAttribute="top" secondItem="BNr-GO-jip" secondAttribute="bottom" id="qSG-7s-Iin"/>
                         </constraints>
                     </view>

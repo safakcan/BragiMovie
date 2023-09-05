@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WHd-TP-RP2">
-                                <rect key="frame" x="0.0" y="103" width="393" height="80"/>
+                                <rect key="frame" x="5" y="103" width="383" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="XZP-M5-eSp"/>
@@ -65,8 +65,8 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WHd-TP-RP2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BI7-Bs-pU4"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WHd-TP-RP2" secondAttribute="trailing" id="J5N-JZ-p8g"/>
+                            <constraint firstItem="WHd-TP-RP2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="BI7-Bs-pU4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WHd-TP-RP2" secondAttribute="trailing" constant="5" id="J5N-JZ-p8g"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GIP-TJ-srH" secondAttribute="bottom" id="Z8L-Ng-pbj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GIP-TJ-srH" secondAttribute="trailing" id="doe-cl-Dli"/>
                             <constraint firstItem="GIP-TJ-srH" firstAttribute="top" secondItem="WHd-TP-RP2" secondAttribute="bottom" id="eB2-GN-Ud0"/>
@@ -88,7 +88,7 @@
         <scene sceneID="0Dt-ZQ-x9i">
             <objects>
                 <navigationController storyboardIdentifier="MoviesPageNav" automaticallyAdjustsScrollViewInsets="NO" id="5Hg-mz-GsR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Movie" image="film.fill" catalog="system" selectedImage="film.fill" id="5Tf-4F-sMg"/>
+                    <tabBarItem key="tabBarItem" title="Movie" image="film" catalog="system" selectedImage="film" id="5Tf-4F-sMg"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhE-gb-u6R">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -123,7 +123,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="film.fill" catalog="system" width="128" height="93"/>
+        <image name="film" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

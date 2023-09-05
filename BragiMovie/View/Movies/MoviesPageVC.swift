@@ -27,6 +27,7 @@ class MoviesPageVC: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Movies"
         setupCollectionView()
         bindViewModel()
     }
@@ -54,6 +55,8 @@ class MoviesPageVC: UIViewController, UIScrollViewDelegate {
         bindMovies()
         bindGenreSelection()
         bindMovieScrolling()
+        bindItemSelected()
+        selectFirstGenre()
     }
 
     private func bindGenres() {
@@ -94,4 +97,34 @@ class MoviesPageVC: UIViewController, UIScrollViewDelegate {
             .disposed(by: disposeBag)
     }
 
+    private func bindItemSelected() {
+        movieCollectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+
+                if let movie = try? self.viewModel.movies.value()[indexPath.row] {
+
+                    if let detailVC = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "Detail") as? DetailPageVC {
+                        detailVC.item = movie
+
+                        self.navigationController?.pushViewController(detailVC, animated: true)
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func selectFirstGenre() {
+        viewModel.genres
+            .take(1)
+            .subscribe(onNext: { [weak self] genres in
+                guard !genres.isEmpty else { return }
+
+                let firstIndexPath = IndexPath(row: 0, section: 0)
+                self?.genreCollectionView.selectItem(at: firstIndexPath, animated: false, scrollPosition: .top)
+                guard let genre = try? self?.viewModel.genres.value().first else { return }
+                self?.viewModel.loadMovies(for: genre)
+            })
+            .disposed(by: disposeBag)
+    }
 }
