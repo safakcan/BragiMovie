@@ -18,23 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0yq-hh-gkm">
-                                <rect key="frame" x="0.0" y="163" width="393" height="606"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="9Av-es-hZW">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Av-es-hZW" id="n3k-Aw-H05">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WHd-TP-RP2">
-                                <rect key="frame" x="0.0" y="103" width="393" height="60"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="XZP-M5-eSp"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="utC-4W-rAC">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -43,10 +32,30 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Cdn-XX-mkl">
-                                        <rect key="frame" x="0.0" y="-34" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="-24" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wJt-Vj-LGu">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GIP-TJ-srH">
+                                <rect key="frame" x="0.0" y="183" width="393" height="586"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="HkK-ph-Fka">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9dj-wx-uYa">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2dy-yO-Nkf">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -57,19 +66,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WHd-TP-RP2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BI7-Bs-pU4"/>
-                            <constraint firstItem="0yq-hh-gkm" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="IQN-4w-IE0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WHd-TP-RP2" secondAttribute="trailing" id="J5N-JZ-p8g"/>
-                            <constraint firstItem="0yq-hh-gkm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="OXH-Et-NX2"/>
-                            <constraint firstItem="0yq-hh-gkm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="X3Z-iy-poJ"/>
-                            <constraint firstItem="0yq-hh-gkm" firstAttribute="top" secondItem="WHd-TP-RP2" secondAttribute="bottom" id="aCe-Ff-fis"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GIP-TJ-srH" secondAttribute="bottom" id="Z8L-Ng-pbj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GIP-TJ-srH" secondAttribute="trailing" id="doe-cl-Dli"/>
+                            <constraint firstItem="GIP-TJ-srH" firstAttribute="top" secondItem="WHd-TP-RP2" secondAttribute="bottom" id="eB2-GN-Ud0"/>
                             <constraint firstItem="WHd-TP-RP2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="tX7-iE-JUm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0yq-hh-gkm" secondAttribute="trailing" id="xS5-8F-qQB"/>
+                            <constraint firstItem="GIP-TJ-srH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wKy-fu-TyV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6rD-0Y-Rev"/>
                     <connections>
                         <outlet property="genreCollectionView" destination="WHd-TP-RP2" id="8ZW-hT-Mn6"/>
-                        <outlet property="tableView" destination="0yq-hh-gkm" id="rcl-kU-lc9"/>
+                        <outlet property="movieCollectionView" destination="GIP-TJ-srH" id="iE4-Z3-zU5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

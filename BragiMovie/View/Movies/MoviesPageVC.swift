@@ -8,50 +8,90 @@
 import UIKit
 import RxSwift
 
-class MoviesPageVC: UIViewController {
-    @IBOutlet var tableView: UITableView!
+class MoviesPageVC: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var genreCollectionView: UICollectionView!
+    @IBOutlet weak var movieCollectionView: UICollectionView!
+
     private let viewModel = MoviePageViewModel()
     private let disposeBag = DisposeBag()
 
+    private let padding: CGFloat = 20
+    private let itemRatio: CGFloat = 1.4
+    private var itemHeight: CGFloat {
+        return itemWidth * itemRatio
+    }
+    private var itemWidth: CGFloat {
+        return UIScreen.main.bounds.width * 0.43
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+        bindViewModel()
+    }
 
-        tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: "MovieTableViewCell")
+    private func setupCollectionView() {
+        registerCells()
+        configureMovieCollectionViewLayout()
+    }
 
-        genreCollectionView.register(UINib(nibName: "GenreCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GenreCollectionViewCell")
+    private func registerCells() {
+        genreCollectionView.register(GenreCollectionViewCell.nib, forCellWithReuseIdentifier: GenreCollectionViewCell.identifier)
+        movieCollectionView.register(MovieCollectionViewCell.nib, forCellWithReuseIdentifier: MovieCollectionViewCell.identifier)
+    }
 
+    private func configureMovieCollectionViewLayout() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
+        layout.minimumLineSpacing = 3
+        movieCollectionView.collectionViewLayout = layout
+        movieCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+    }
+
+    private func bindViewModel() {
+        bindGenres()
+        bindMovies()
+        bindGenreSelection()
+        bindMovieScrolling()
+    }
+
+    private func bindGenres() {
         viewModel.genres
-            .bind(to: genreCollectionView.rx.items(cellIdentifier: "GenreCollectionViewCell", cellType: GenreCollectionViewCell.self)) { row, genre, cell in
+            .bind(to: genreCollectionView.rx.items(cellIdentifier: GenreCollectionViewCell.identifier, cellType: GenreCollectionViewCell.self)) { _, genre, cell in
                 cell.setUp(with: genre)
             }
             .disposed(by: disposeBag)
+    }
 
+    private func bindMovies() {
         viewModel.movies
-            .bind(to: tableView.rx.items(cellIdentifier: "MovieTableViewCell", cellType: MovieTableViewCell.self)) { row, movie, cell in
+            .bind(to: movieCollectionView.rx.items(cellIdentifier: MovieCollectionViewCell.identifier, cellType: MovieCollectionViewCell.self)) { _, movie, cell in
                 cell.setup(with: movie)
             }
             .disposed(by: disposeBag)
+    }
 
+    private func bindGenreSelection() {
         genreCollectionView.rx.itemSelected
             .subscribe(onNext: { [weak self] indexPath in
                 guard let genre = try? self?.viewModel.genres.value()[indexPath.row] else { return }
                 self?.viewModel.loadMovies(for: genre)
             })
             .disposed(by: disposeBag)
+    }
 
-        tableView.rx.contentOffset
+    private func bindMovieScrolling() {
+        movieCollectionView.rx.contentOffset
             .subscribe(onNext: { [weak self] contentOffset in
                 let offsetY = contentOffset.y
-                let contentHeight = self?.tableView.contentSize.height ?? 0
+                let contentHeight = self?.movieCollectionView.contentSize.height ?? 0
 
-                if offsetY > contentHeight - (self?.tableView.frame.size.height ?? 0) * 2 {
+                if offsetY > contentHeight - (self?.movieCollectionView.frame.size.height ?? 0) * 2 {
                     self?.viewModel.loadMoreMovies()
                 }
             })
             .disposed(by: disposeBag)
-
     }
-    
+
 }
