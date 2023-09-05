@@ -45,3 +45,10 @@ struct TVShow: Decodable {
         case voteCount = "vote_count"
     }
 }
+
+extension TVShow: DetailDisplayable {
+    var releaseDate: String { return firstAirDate }
+    var rating: String { String(voteAverage) }
+    var description: String { overview }
+    var imageUrlString: String? { return fullPath}
+}

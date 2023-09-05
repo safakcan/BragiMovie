@@ -24,5 +24,17 @@ class GenreCollectionViewCell: UICollectionViewCell {
 
     func setUp(with: Genre) {
         genreLbl?.text = with.name
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.borderWidth = 1
+        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = true
+    }
+
+    override var isSelected: Bool {
+        didSet {
+            contentView.backgroundColor = isSelected ? .lightGray : .clear
+        }
     }
 }
+
+

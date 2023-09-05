@@ -28,9 +28,12 @@ class ShowsPageVC: UIViewController, UIScrollViewDelegate {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "TV Shows"
         configureCollections()
         bindViewModel()
         handleInteractions()
+        bindItemSelected()
+        selectFirstGenre()
     }
 
     // MARK: - Configurations
@@ -77,6 +80,37 @@ class ShowsPageVC: UIViewController, UIScrollViewDelegate {
                 if offsetY > contentHeight - (self?.showCollectionView.frame.size.height ?? 0) * 2 {
                     self?.viewModel.loadMoreTVShows()
                 }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func bindItemSelected() {
+        showCollectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let self = self else { return }
+
+                if let show = try? self.viewModel.tvShows.value()[indexPath.row] {
+
+                    if let detailVC = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "Detail") as? DetailPageVC {
+                        detailVC.item = show
+
+                        self.navigationController?.pushViewController(detailVC, animated: true)
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func selectFirstGenre() {
+        viewModel.genres
+            .take(1)
+            .subscribe(onNext: { [weak self] genres in
+                guard !genres.isEmpty else { return }
+
+                let firstIndexPath = IndexPath(row: 0, section: 0)
+                self?.genreCollectionView.selectItem(at: firstIndexPath, animated: false, scrollPosition: .top)
+                guard let genre = try? self?.viewModel.genres.value().first else { return }
+                self?.viewModel.loadTVShows(for: genre)
             })
             .disposed(by: disposeBag)
     }
